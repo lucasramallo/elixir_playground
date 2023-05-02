@@ -1,13 +1,13 @@
 defmodule Main do
   def run(path) do
-    valores = path
+    values = path
       |> File.read!()
       |> String.trim()
       |> String.split()
       |> Enum.map(&String.to_integer/1)
 
-    [valor1, valor2] = valores
-    resultado = valor1 + valor2
+    [value1, value2] = values
+    resultado = value1 + value2
     IO.puts("O resultado da soma é #{resultado}")
   end
 end
