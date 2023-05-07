@@ -35,9 +35,9 @@ Soma.main()
 path = "entrada.txt"
 
 valores = path
-          |> File.read!()
-          |> String.split(" ")
-          |> Enum.map(&String.to_integer/1)
+  |> File.read!()
+  |> String.split(" ")
+  |> Enum.map(&String.to_integer/1)
 
 {valor1, valor2} = valores
 
