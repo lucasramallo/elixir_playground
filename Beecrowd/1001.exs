@@ -19,32 +19,12 @@
 # Main.run()
 
 
-
-
-# defmodule Main do
-#   def run do
-#     a = IO.gets("") |> String.trim |> String.to_integer
-#     b = IO.gets("") |> String.trim |> String.to_integer
-#     x = a + b
-#     IO.puts "X = #{x}"
-#   end
-# end
-
-# Main.run()
-
 defmodule Main do
   def run do
-    {:ok, file} = File.open("input.txt")
-    stream = File.stream!(file)
-
-    numbers = stream
-      |> Enum.map(&String.trim/1)
-      |> Enum.map(&String.to_integer/1)
-
-    x = Enum.sum(numbers)
+    a = IO.gets("Digite um número |> ") |> String.trim |> String.to_integer
+    b = IO.gets("Digite outro número |>") |> String.trim |> String.to_integer
+    x = a + b
     IO.puts "X = #{x}"
-
-    File.close(file)
   end
 end
 
