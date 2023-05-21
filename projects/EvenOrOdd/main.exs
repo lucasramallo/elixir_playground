@@ -3,21 +3,24 @@ defmodule App do
     IO.gets("Type a number |> ")
     |> Integer.parse()
     |> number_validation()
-    |> is_pair()
+    |> is_even()
     |> IO.puts()
   end
 
-  def is_pair(number) do
+
+  # Checks whether the number is even or odd
+  def is_even(number) do
     if rem(number, 2) == 0 do
-      "PAIR"
+      "EVEN"
     else
       "ODD"
     end
   end
 
+  # Validates if input is a number
   def number_validation(data) do
     if data == :error do
-      IO.puts("Invalid Number")
+      IO.puts ("Invalid Number!")
       run()
     else
       {num, _} = data
