@@ -7,16 +7,6 @@ defmodule App do
     |> IO.puts()
   end
 
-
-  # Checks whether the number is even or odd
-  def is_even(number) do
-    if rem(number, 2) == 0 do
-      "EVEN"
-    else
-      "ODD"
-    end
-  end
-
   # Validates if input is a number
   def number_validation(data) do
     if data == :error do
@@ -25,6 +15,15 @@ defmodule App do
     else
       {num, _} = data
       num
+    end
+  end
+
+    # Checks whether the number is even or odd
+  def is_even(number) do
+    if rem(number, 2) == 0 do
+      "EVEN"
+    else
+       "ODD"
     end
   end
 end
