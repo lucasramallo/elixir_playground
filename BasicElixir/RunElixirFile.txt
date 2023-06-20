@@ -2,3 +2,6 @@ Rodar sempre que modificar o código:
 
 $ iex main.ex
 iex(1)> Main.sayMyName // Modulo e função
+
+
+Elixir nomedoarquivo (Chamar o modulo e a funcao no arquivo (Main.run()))
