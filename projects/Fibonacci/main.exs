@@ -1,7 +1,7 @@
 defmodule Main do
   def run() do
-    index_str = IO.gets("Digite o Index > ")
-    index = String.trim(index_str) |> String.to_integer()
+    input = IO.gets("Digite o Index > ")
+    index = String.trim(input) |> String.to_integer()
     result = fib(index - 1)
     IO.puts(result)
   end
