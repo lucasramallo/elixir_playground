@@ -1,6 +1,9 @@
 defmodule Main do
   def run do
-    auth(getUser(), getPassword())
+    username = getUser()
+    password = getPassword()
+
+    auth(username, password)
   end
 
   def getUser do
