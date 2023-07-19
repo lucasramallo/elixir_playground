@@ -1,79 +1,86 @@
 defmodule Main do
-  def run do
+  def login() do
+    while(:true)
+  end
+
+  defp while(conditionLoop \\ :true) when conditionLoop == :true do
     username = getUser()
     password = getPassword()
 
-    {username, password}
-    |> auth()
+    {username, password} |> auth()
+    while(:true)
   end
 
-  def auth(credentials) do
+  defp auth(credentials) do
     case credentials do
       {"lucas", "1234"} ->
         IO.puts("Authenticated!")
       {"lucas", pass} when pass != "1234" and pass != "" ->
         IO.puts("Invalid Password!")
-        run()
       {user, _rest} when user != "lucas" and user != "" ->
         IO.puts("User Not Found!")
-        run()
       {user, pass} when user == "" or pass == "" ->
         IO.puts("Enter the values!")
-        run()
     end
   end
 
-  def getUser do
+  defp getUser() do
     IO.gets("User > ")
     |> String.trim()
   end
 
-  def getPassword do
+  defp getPassword() do
     IO.gets("Password > ")
-    |> String.trim();
+    |> String.trim()
   end
 end
 
+
+
+
+
+
+
+
+
+
+
 # defmodule Main do
-#   def run do
+#   def login() do
 #     username = getUser()
 #     password = getPassword()
 
-#     auth(username, password)
+#     {username, password} |> auth()
 #   end
 
-#   def getUser do
+#   def auth(credentials) do
+#     case credentials do
+#       {"lucas", "1234"} ->
+#         IO.puts("Authenticated!")
+#       {"lucas", pass} when pass != "1234" and pass != "" ->
+#         IO.puts("Invalid Password!")
+#         login()
+#       {user, _rest} when user != "lucas" and user != "" ->
+#         IO.puts("User Not Found!")
+#         login()
+#       {user, pass} when user == "" or pass == "" ->
+#         IO.puts("Enter the values!")
+#         login()
+#     end
+#   end
+
+#   def getUser() do
 #     IO.gets("User > ")
 #     |> String.trim()
 #   end
 
-#   def getPassword do
+#   def getPassword() do
 #     IO.gets("Password > ")
 #     |> String.trim();
 #   end
-
-#   def auth(user, pass) when user == "lucas" and pass == "123" do
-#     IO.puts("Authenticated!");
-#   end
-
-#   def auth(user, pass) when user == "lucas" and pass != "123" do
-#     IO.puts("Invalid Password!");
-#     run()
-#   end
-
-#   def auth(user, pass) when user != "lucas" and pass == "123" do
-#     IO.puts("Invalid Username!");
-#     run()
-#   end
-
-#   def auth(user, pass) when user != "lucas" and pass != "123" do
-#     IO.puts("Invalid Username and Password!");
-#     run()
-#   end
-
-#   def auth(:error) do
-#     IO.puts("Error!");
-#     run()
-#   end
-
 # end
+
+
+# #   def auth(user, pass) when user == "lucas" and pass == "123" do
+# #     IO.puts("Authenticated!");
+# #   end
