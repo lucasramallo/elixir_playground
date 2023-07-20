@@ -51,8 +51,8 @@ defmodule Main do
 end
 
 
-# list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# sum = fn x -> x * 2 end
-# Enum.map(list, sum)
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+sum = fn x -> x * 2 end
+Enum.map(list, sum)
 
-# # saida: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+# saida: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
