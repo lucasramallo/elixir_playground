@@ -11,7 +11,7 @@ defmodule Auth do
 
     case {name, password} do
       ^db_credentials -> "Authenticated!";
-      _ -> {name, password} |> InvalidCredentials.invalid_credentials();
+      _ -> {name, password} |> InvalidCredentials.invalid_credential_type();
     end
   end
 end

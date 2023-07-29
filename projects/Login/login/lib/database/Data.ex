@@ -1,5 +1,5 @@
 defmodule Database.Data do
   def user do
-    {"lucas", "12345678"}
+    {"lucas", "1234"}
   end
 end
