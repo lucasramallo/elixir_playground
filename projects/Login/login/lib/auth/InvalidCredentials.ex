@@ -10,14 +10,14 @@ defmodule InvalidCredentials do
 
     {name_in_db, password_in_db} = Database.Data.user()
 
-    IO.puts("Invalid Credentials!")
+    IO.puts("\nInvalid Credentials!")
 
     cond do
       name != name_in_db ->
-        IO.puts("User not found!")
+        IO.puts("User not found!\n")
         Auth.call();
       pass != password_in_db ->
-        IO.puts("Invalid password!")
+        IO.puts("Invalid password!\n")
         Auth.call();
     end
   end

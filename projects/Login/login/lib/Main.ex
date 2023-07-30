@@ -5,3 +5,5 @@ defmodule Main do
     Auth.call()
   end
 end
+
+# cmd /c iex -S mix
