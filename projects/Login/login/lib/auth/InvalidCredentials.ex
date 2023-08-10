@@ -8,15 +8,15 @@ defmodule InvalidCredentials do
 
   def invalid_credential_type({name, pass}) do
 
-    {name_in_db, password_in_db} = Database.Data.user()
+    {data_credential_name, data_credential_password} = Database.Data.user()
 
     IO.puts("\nInvalid Credentials!")
 
     cond do
-      name != name_in_db ->
+      name != data_credential_name ->
         IO.puts("User not found!\n")
         Auth.call();
-      pass != password_in_db ->
+      pass != data_credential_password ->
         IO.puts("Invalid password!\n")
         Auth.call();
     end
