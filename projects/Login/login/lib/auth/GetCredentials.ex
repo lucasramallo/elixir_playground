@@ -1,11 +1,13 @@
 defmodule GetCredentials do
-  def get_name() do
+  def fetch_name() do
     IO.gets("Name > ")
-    |> String.trim();
+    |> String.trim()
+    |> String.downcase()
   end
 
-  def get_password() do
+  def fetch_password() do
     IO.gets("Password > ")
-    |> String.trim();
+    |> String.trim()
+    |> String.downcase()
   end
 end

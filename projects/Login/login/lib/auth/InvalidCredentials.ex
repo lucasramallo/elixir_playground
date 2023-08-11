@@ -6,7 +6,7 @@ defmodule InvalidCredentials do
       This module identifies the type of invalid credential if authentication is not successful.
     """
 
-  def invalid_credential_type({name, pass}) do
+  def handle_error({name, pass}) do
 
     {data_credential_name, data_credential_password} = Database.Data.user()
 

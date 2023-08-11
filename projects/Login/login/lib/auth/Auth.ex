@@ -1,20 +1,26 @@
 defmodule Auth do
-  alias InvalidCredentials;
-  alias GetCredentials;
-  alias Database.Data;
+  alias InvalidCredentials
+  alias GetCredentials
+  alias UserCredentialsSchema
+  alias App
 
   def call() do
-
     IO.puts("Login")
 
-    name = GetCredentials.get_name();
-    password = GetCredentials.get_password();
+    name = GetCredentials.fetch_name()
+    password = GetCredentials.fetch_password()
 
-    db_credentials = Database.Data.user()
+    db_credentials = UserCredentialsSchema.credentials()
+    db_username = db_credentials.username
+    db_password = db_credentials.password
 
-    cond do
-      {name, password} == db_credentials -> IO.puts("\nAuthenticated!\n");
-      true -> {name, password} |> InvalidCredentials.invalid_credential_type(); # true for any other case.
+    IO.inspect(db_credentials)
+
+    case {name, password} do
+      {^db_username, ^db_password} ->
+        App.app()
+      _ ->
+        InvalidCredentials.handle_error({name, password})
     end
   end
 end
