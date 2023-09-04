@@ -1,10 +1,16 @@
-users = ["Lucas", "Maria", "João", "Carlos", "Sophia", "Jonas"]
-jobs = ["Developer", "Developer", "Developer", "Developer", "Developer", "Developer", ]
+users = [
+  {"Lucas", "Developer"},
+  {"Maria", "Developer"},
+  {"João", "Developer"},
+  {"Carlos", "Developer"},
+  {"Sophia", "Developer"},
+  {"Jonas", "Developer"}
+]
 
-mappingDeveloperers = Enum.zip(users, jobs)
-mapping = Enum.map(mappingDeveloperers, fn {user, job} -> "Name: #{user}, Job: #{job}" end)
+mapping = Enum.map(mappingDeveloperers, fn {dev, job} -> IO.puts("#{dev} #{job}") end)
 
-#mappingDeveloperers = Enum.zip(users, jobs)
-#|> Enum.map(fn {user, job} -> "Name: #{user}, Job: #{job}" end)
 
-IO.inspect(mapping)
+IO.inspect(mappingDeveloperers)
+
+name = users |> hd()
+IO.puts(name)
