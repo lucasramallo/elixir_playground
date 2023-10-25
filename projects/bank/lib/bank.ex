@@ -1,7 +1,7 @@
 defmodule User do
 
-  @enforce_keys [:name, :cpf]
-  defstruct name: nil, cpf: nil, balance: 0
+  @enforce_keys [:name, :cpf] 
+  defstruct name: nil, cpf: nil, balance: 0, history: %{}
 
   @spec create(name :: String.t(), cpf :: String.t(), balance: Integer.t()) :: %User{}
   def create(name, cpf, balance) do
