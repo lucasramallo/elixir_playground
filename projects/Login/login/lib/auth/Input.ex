@@ -1,4 +1,4 @@
-defmodule GetCredentials do
+defmodule Input do
   def fetch_name() do
     IO.gets("Name > ")
     |> String.trim()

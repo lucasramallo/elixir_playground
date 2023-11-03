@@ -1,20 +1,20 @@
 defmodule Auth do
   alias InvalidCredentials
-  alias GetCredentials
-  alias UserCredentialsSchema
+  alias Input
+  alias UserController
   alias App
 
   def call() do
     IO.puts("Login")
 
-    name = GetCredentials.fetch_name()
-    password = GetCredentials.fetch_password()
+    name = Input.fetch_name()
+    password = Input.fetch_password()
 
-    db_credentials = UserCredentialsSchema.credentials()
-    db_username = db_credentials.username
-    db_password = db_credentials.password
+    credentials = UserController.get_credentials()
+    db_username = credentials.username
+    db_password = credentials.password
 
-    IO.inspect(db_credentials)
+    IO.inspect(credentials)
 
     case {name, password} do
       {^db_username, ^db_password} ->
