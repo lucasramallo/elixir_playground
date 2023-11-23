@@ -37,20 +37,3 @@ defmodule User do
     Enum.each(user.history, fn el -> IO.puts(el) end)
   end
 end
-
-
-defmodule Main do
-  def main do
-    cliente1 = User.create("João", "13215593450", 0) |> IO.inspect()
-
-    cliente1 = User.deposit(cliente1, 100)
-    cliente1 = User.deposit(cliente1, 23)
-    cliente1 = User.deposit(cliente1, 19)
-    cliente1 = User.withdraw(cliente1, 19)
-    cliente1 = User.statement(cliente1)
-
-    IO.inspect(cliente1)
-  end
-end
-
-Main.main()
