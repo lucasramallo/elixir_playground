@@ -38,6 +38,7 @@ defmodule User do
   end
 end
 
+
 defmodule Main do
   def main do
     cliente1 = User.create("João", "13215593450", 0) |> IO.inspect()
