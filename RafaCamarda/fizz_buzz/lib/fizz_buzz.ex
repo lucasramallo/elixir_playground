@@ -13,7 +13,6 @@ defmodule FizzBuzz do
       |> Enum.map(&convert/1)
 
     {:ok, res}
-
   end
 
   defp handle_file_read({:error, reason}), do: {:error, reason}

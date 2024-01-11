@@ -5,13 +5,6 @@ defmodule Main do
 
     for_each(data, :name)
     for_each(list)
-
-    first_user_data = Enum.reduce(
-      hd(data), %{},
-      fn {key, value}, newMap -> Map.put(newMap, key, value) end
-    )
-
-    IO.inspect(first_user_data)
   end
 
   defp for_each([], _key), do: :ok
