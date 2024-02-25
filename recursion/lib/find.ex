@@ -6,14 +6,18 @@ defmodule Find do
   end
 
   def find_element_in_a_list([head | tail], el) do
-    find_element_in_a_list(tail, el)
+    if el == find_element_in_a_list(tail, el) do
+      :true
+    end
+    :false
   end
 
-  def find_element_in_a_list([], el) do
-    :ok
+  def find_element_in_a_list(list, el) when length(list) == 1 do
+    [number] = list
+    number
   end
 
-  def find_element_in_a_list([head | tail ], el) when head == el  do
-    :true
-  end
+  # def find_element_in_a_list([head | tail ], el) when head == el  do
+  #   :true
+  # end
 end
